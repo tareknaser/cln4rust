@@ -102,6 +102,7 @@ impl GossipMap {
                 // channel announcement!
                 256 => {
                     let channel_announcement = ChannelAnnouncement::from_wire(&mut stream)?;
+                    println!("{:?}", channel_announcement);
                     let node_one = GossipNodeId::from_bytes(&channel_announcement.node_id_1)?;
                     let node_two = GossipNodeId::from_bytes(&channel_announcement.node_id_2)?;
                     if !self.nodes.contains_key(&node_one) {
