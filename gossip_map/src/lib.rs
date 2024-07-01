@@ -29,7 +29,7 @@ use crate::gossip_types::{GossipChannel, GossipNode, GossipNodeId, GossipStoredH
 /// Gossip map implementation, that allow you to manage the gossip_store
 /// written by core lightning.
 #[derive(Debug)]
-struct GossipMap {
+pub struct GossipMap {
     path: String,
     version: u8,
     stream: Option<BufReader<File>>,
